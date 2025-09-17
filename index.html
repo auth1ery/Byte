@@ -22,6 +22,40 @@ button.byte-btn:hover{background:#44475a;}
 </head>
 <body>
 
+<!-- backup site banner -->
+<div id="backup-banner" style="
+    background-color: yellow;
+    color: red;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+">
+    THIS IS A BACKUP SITE. OFFICIAL IDE IS AT: 
+    <a href="https://bytedev.neocities.org" target="_blank">NEOCITIES</a>
+</div>
+
+<script>
+    // remove the banner after 10 seconds (10000 milliseconds)
+    setTimeout(() => {
+        const banner = document.getElementById('backup-banner');
+        if (banner) {
+            banner.style.transition = 'opacity 0.5s';
+            banner.style.opacity = 0;
+            setTimeout(() => banner.remove(), 500); // remove after fade out
+        }
+    }, 10000);
+</script>
+
+<style>
+    body {
+        padding-top: 50px;
+    }
+</style>
+
 <div id="editor-container">
 <textarea id="editor"></textarea>
 <div id="buttons">
@@ -39,7 +73,6 @@ button.byte-btn:hover{background:#44475a;}
 <script src="interpreter.js"></script>
 
 <p>open source at: https://github.com/auth1ery/byte/tree/main<br><3</p>
-<p style="color:red;">THIS IS A BACKUP SITE. OFFICIAL IDE IS AT: <a href="https://bytedev.neocities.org">NEOCITIES</a></p>
 
 </body>
 </html>
