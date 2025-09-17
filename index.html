@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Byte IDE</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/dracula.min.css">
+<style>
+html,body{height:100%;margin:0;padding:0;background:#282a36;color:#f8f8f2;font-family:monospace;}
+body{display:flex;flex-direction:column;}
+#editor-container{flex:1;display:flex;flex-direction:column;border-bottom:2px solid #44475a;}
+#editor{flex:1;}
+#buttons{padding:5px 10px;background:#21222c;display:flex;gap:10px;border-top:1px solid #44475a;}
+#buttons button{padding:5px 15px;background:#6272a4;color:white;border:none;cursor:pointer;}
+#buttons button:hover{background:#44475a;}
+#output{flex:1;padding:10px;background:#1e1f29;border-top:2px solid #44475a;overflow-y:auto;white-space:pre-wrap;color:#f8f8f2;}
+.CodeMirror .line-error{background-color: rgba(255,0,0,0.3) !important;}
+.CodeMirror .line-current{background-color: rgba(0,255,255,0.2) !important;}
+button.byte-btn{margin:5px;padding:5px 10px;background:#6272a4;color:white;border:none;cursor:pointer;}
+button.byte-btn:hover{background:#44475a;}
+</style>
+</head>
+<body>
+
+<div id="editor-container">
+<textarea id="editor"></textarea>
+<div id="buttons">
+<button id="run">Run</button>
+<button id="clear">Clear Output</button>
+<button id="docs">Docs</button>
+</div>
+</div>
+
+<div id="output"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/javascript/javascript.min.js"></script>
+
+<script src="interpreter.js"></script>
+
+</body>
+</html>
+
+<!-- i just gained 99999 aura from making this language -->
