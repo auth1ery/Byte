@@ -3,7 +3,7 @@ byte is a lightweight interpreted programming language for simple scripting, rap
 flexible, and abnormally buggy.
 
 # DISCLAIMER
-ANY WEBSITES CONNECTED TO THIS GITHUB REPO IS A BACKUP SITE. DO NOT USE THESE SITES ONLY IF NEOCITIES IS DOWN.
+ANY WEBSITES CONNECTED TO THIS GITHUB REPO IS A BACKUP SITE. DO NOT USE THESE SITES, BUT ONLY IF NEOCITIES IS DOWN.
 USE THE NEOCITIES VERSION: https://bytedev.neocities.org/
 
 # how to use
