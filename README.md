@@ -24,15 +24,15 @@ then paste the code. don't worry, it won't do anything else other than downloadi
 
 2. do whatever you want, put it into a folder, make bolganese spaghetti with it, but in this example we're gonna add it into a folder or somewhere where your site is hosted.
 
-3. You can read it in JavaScript or Node.js with `fetch` (browser) or `fs.readFile` (Node.js).
-Example in Javascript:
+3. you can read it in JavaScript or Node.js with `fetch` (browser) or `fs.readFile` (Node.js).
+example in Javascript:
 ```
 fetch('./byte.json')
   .then(res => res.json())
   .then(data => console.log(data));
 ```
 
-Example in Node.js:
+example in Node.js:
 ```
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('./byte.json', 'utf-8'));
