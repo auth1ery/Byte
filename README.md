@@ -1,5 +1,5 @@
 # byte
-byte is a lightweight interpreted language for simple scripting, rapid prototyping, and educational use. it supports variables, functions, loops, conditionals, buttons, and basic graphics interactions.
+byte is a lightweight interpreted programming language for simple scripting, rapid prototyping, and educational use. it supports variables, functions, loops, conditionals, buttons, and basic graphics interactions.
 flexible, and abnormally buggy.
 
 # how to use
