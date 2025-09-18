@@ -1,10 +1,13 @@
 # byte
 byte is a lightweight interpreted programming language for simple scripting, rapid prototyping, and educational use. it supports variables, functions, loops, conditionals, buttons, and basic graphics interactions.
-flexible, and abnormally buggy.
+flexible, and abnormally buggy. 
 
 # DISCLAIMER
 ANY WEBSITES CONNECTED TO THIS GITHUB REPO IS A BACKUP SITE. DO NOT USE THESE SITES, BUT ONLY IF NEOCITIES IS DOWN.
 USE THE NEOCITIES VERSION: https://bytedev.neocities.org/
+
+# DISCLAIMER 2 (lmao)
+THIS PROGRAMMING LANGUAGE AS OF NOW IS BUGGY AND UNSTABLE. IT IS NOT DESIGNED FOR BIG BYTE PROJECTS. THE INTERPRETER ISN'T PERFECT, AND ERRORS MAY APPEAR UNEXPECTEDLY.
 
 # how to use
 this is just the repository for the project, but you can follow these steps here to get byte into your site. (ooh that rhymed)
