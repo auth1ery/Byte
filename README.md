@@ -50,6 +50,6 @@ then, you got it!
 
 # links
 
-IDE: https://bytedev.neocities.org/ ----------------------------------------------------------------
-documentation: https://bytedev.neocities.org/docs -------------------------------------------------------
+IDE: https://bytedev.neocities.org/  
+documentation: https://bytedev.neocities.org/docs  
 DISCORD SERVER: https://discord.gg/QMDy4d5gCD
