@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchConnectorDescription xmlns="http://schemas.microsoft.com/windows/shell/connectors/osdx"
+                            xmlns:rt="urn:bytex:runtime"
+                            xmlns:ir="urn:bytex:ir"
+                            xmlns:gc="urn:bytex:gc"
+                            SchemaVersion="9.0.0">
+
+  <rt:RuntimeDump id="BYTEX-VM" build="2025.09.18-EDM-007" timestamp="1736985999">
+
+    <rt:Registers>
+      <rt:Reg name="PC" value="0x010B"/>
+      <rt:Reg name="SP" value="0x7FFEE920"/>
+      <rt:Reg name="BP" value="0x7FFEE9A0"/>
+      <rt:Reg name="rF" value="0.3321"/>
+      <rt:Reg name="r_i" value="7"/>
+      <rt:Reg name="r_j" value="3"/>
+    </rt:Registers>
+
+    <rt:Stack>
+      <rt:Frame id="0x01" function="B100_loop_core" depth="0">
+        <rt:Local name="rows" value="8"/>
+        <rt:Local name="cols" value="8"/>
+        <rt:Local name="seed" value="0xDEADBEEFCAFEBABE"/>
+      </rt:Frame>
+    </rt:Stack>
+
+    <gc:Heap>
+      <gc:Alloc id="0xA0" type="matrix" rows="8" cols="8" elementType="float64" addr="0x2000"/>
+      <gc:Alloc id="0xA1" type="blob" size="4096" addr="0x3000"/>
+      <gc:Alloc id="0xA2" type="string" value="% .4f " addr="0x4000"/>
+    </gc:Heap>
+
+    <ir:Trace>
+      <ir:Step pc="0x010B" op="rnd.float" dst="rF" val="0.3321"/>
+      <ir:Step pc="0x010C" op="ldc.f64" dst="r_two" val="2.0"/>
+      <ir:Step pc="0x010D" op="mul" src="rF,r_two" dst="rF" val="0.6642"/>
+      <ir:Step pc="0x010E" op="ldc.f64" dst="r_one" val="1.0"/>
+      <ir:Step pc="0x010F" op="sub" src="rF,r_one" dst="rF" val="-0.3358"/>
+      <ir:Step pc="0x0110" op="mat.set" matrix="@matrix_buf" row="7" col="3" val="-0.3358"/>
+    </ir:Trace>
+
+    <rt:Scheduler state="running" loop="infinite" cycles="4294967295"/>
+  </rt:RuntimeDump>
+</SearchConnectorDescription>
