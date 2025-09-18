@@ -11,7 +11,7 @@ const BYTE_KEYWORDS = [
   "onStr","func","const","AND","NOT","IF",
   "Change","SIPHON","Share","addNum","dleNum","Do","-c",
   "Button","Check","Spawn.New","raycast","Hit","Keybind","velocity","require",
-  "ST","AT","TA","BT","TS"
+  "ST","AT","TA","BT","TS", "math.Add", "math.Sub", "math.Mul", "math.Div"
 ].map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); // escape for regex
 
 CodeMirror.defineMode("byte", function(config){
@@ -508,6 +508,43 @@ async function runByteAsync(code){
           return;
         }
       }
+
+  // math, boo
+  if (/^math\.(Add|Sub|Mul|Div)\s+.+=$/i.test(line)){
+  const m = line.match(/^math\.(Add|Sub|Mul|Div)\s+(.+?)\s*=$/i);
+  if (!m) throw new Error("Invalid math syntax");
+  const op = m[1].toLowerCase();
+  const expr = m[2].trim();
+
+  // Split operands and operator (+, -, *, /)
+  const parts = expr.match(/^(do\s+[A-Za-z_]\w*|\d+(?:\.\d+)?)\s*([\+\-\*\/])\s*(do\s+[A-Za-z_]\w*|\d+(?:\.\d+)?)$/i);
+  if (!parts) throw new Error("Invalid math expression format");
+
+  let left = parts[1];
+  let operator = parts[2];
+  let right = parts[3];
+
+  // Replace do <VarName> with actual value
+  if (/^do\s+/i.test(left)) left = lookupVar(left.replace(/^do\s+/i,'').trim(), locals);
+  else left = Number(left);
+
+  if (/^do\s+/i.test(right)) right = lookupVar(right.replace(/^do\s+/i,'').trim(), locals);
+  else right = Number(right);
+
+  // Perform operation
+  let result;
+  switch(op){
+    case "add": result = left + right; break;
+    case "sub": result = left - right; break;
+    case "mul": result = left * right; break;
+    case "div": result = left / right; break;
+  }
+
+  output.push(result); // show result in output
+  return;
+}
+
+
 
       throw new Error("Unknown command: " + line);
     }catch(err){
