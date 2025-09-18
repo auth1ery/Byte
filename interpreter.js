@@ -631,5 +631,5 @@ document.getElementById("clear").addEventListener("click", ()=>{
   if (currentLineHandle){ editor.removeLineClass(currentLineHandle,"background","line-current"); currentLineHandle = null; }
 });
 document.getElementById("docs").addEventListener("click", ()=>{
-  window.open("https://bytedev.neocities.org/docs.html", "_blank");
+  window.open("https://bytelanguage.hashnode.space/default-guide/v1.0?t=1758238750372", "_blank");
 });
