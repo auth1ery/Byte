@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vm:ByteCoreDump xmlns:vm="urn:bytex:vm" xmlns:ir="urn:bytex:ir" xmlns:gc="urn:bytex:gc" version="9.0.0" arch="BYTEX-VM" timestamp="1736985122">
+  <vm:Header>
+    <vm:Magic>0xB17E</vm:Magic>
+    <vm:UUID>e3b2-4f6c-8d1a-ff12-9a7c3b7d1111</vm:UUID>
+    <vm:Build>build-2025-09-18-EDM-007</vm:Build>
+  </vm:Header>
+
+  <vm:Symbols>
+    <vm:Symbol name="@matrix_buf" type="matrix" scope="global" address="0x2000"/>
+    <vm:Symbol name="@rows" type="int" scope="global" address="0x2008" value="8"/>
+    <vm:Symbol name="@cols" type="int" scope="global" address="0x200C" value="8"/>
+    <vm:Symbol name="@seed" type="u64" scope="global" address="0x2010" value="0xDEADBEEFCAFEBABE"/>
+  </vm:Symbols>
+
+  <ir:Program version="BYTEX-IR-9">
+    <ir:Block id="B000" label="init">
+      <ir:Op index="0x0000" mnemonic="seed.init" destination="rnd_state" operand="@seed"/>
+      <ir:Op index="0x0001" mnemonic="alloc.matrix" destination="@matrix_buf" rows="8" cols="8" elementType="float64"/>
+      <ir:Op index="0x0002" mnemonic="call" function="warmup_rng" args="rnd_state"/>
+      <ir:Op index="0x0003" mnemonic="call" function="print" args="'[bytex] worker starting'"/>
+      <ir:Op index="0x0004" mnemonic="jmp" destination="B100_LOOP"/>
+    </ir:Block>
+
+    <ir:Block id="B100" label="infinite_loop">
+      <ir:Op index="0x0100" mnemonic="label" name="B100_LOOP"/>
+      <ir:Op index="0x0101" mnemonic="rnd.float" destination="rF" args="rnd_state,0.0,1.0"/>
+      <ir:Op index="0x0102" mnemonic="ldc.f64" destination="r_two" value="2.0"/>
+      <ir:Op index="0x0103" mnemonic="mul" source="rF,r_two" destination="rF"/>
+      <ir:Op index="0x0104" mnemonic="ldc.f64" destination="r_one" value="1.0"/>
+      <ir:Op index="0x0105" mnemonic="sub" source="rF,r_one" destination="rF"/>
+      <ir:Op index="0x0106" mnemonic="mat.set" matrix="@matrix_buf" row="r_i" col="r_j" value="rF"/>
+      <ir:Op index="0x0107" mnemonic="jmp" destination="B100_LOOP"/>
+    </ir:Block>
+  </ir:Program>
+
+  <gc:Heap>
+    <gc:Alloc id="0xA0" type="matrix" name="@matrix_buf" rows="8" cols="8" elementType="float64"/>
+    <gc:Alloc id="0xA1" type="string" name="__fmt_row" value="% .4f "/>
+    <gc:Alloc id="0xA2" type="string" name="__fmt_newline" value="\n"/>
+  </gc:Heap>
+</vm:ByteCoreDump>
