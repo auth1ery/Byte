@@ -1,4 +1,7 @@
 # byte
+
+![Alt text](images/Byte.png)
+
 byte is a lightweight interpreted programming language for simple scripting, rapid prototyping, and educational use. it supports variables, functions, loops, conditionals, buttons, and basic graphics interactions.
 flexible, and abnormally buggy. 
 
