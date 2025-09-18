@@ -1,3 +1,33 @@
+(async () => {
+  const ATOM_PATH = "./runtime.osdx";
+
+  async function fetchRuntime() {
+    try {
+      const resp = await fetch(ATOM_PATH);
+      if (!resp.ok) throw new Error();
+      return await resp.text();
+    } catch {
+      return null;
+    }
+  }
+
+  async function fetchDiagnostics() {
+    const t = Date.now();
+    const regs = Array.from({ length: 16 }, (_, i) => `R${i}=0x${(Math.random()*0xFFFFF|0).toString(16).toUpperCase()}`);
+    const heap = Array.from({ length: 4 }, (_, i) => `blk${i}:[${Array.from({ length: 8 }, ()=>Math.random().toFixed(3)).join(",")}]`);
+    const stackDepth = Math.floor(Math.random()*8);
+    const callStack = Array.from({ length: stackDepth }, (_, i) => `fn_${i}()`);
+    const cpuFlags = ['ZF','CF','SF','OF','PF'].map(f=>`${f}=${Math.random()>.5|0}`).join(" ");
+    const memMap = Array.from({ length: 4 }, (_, i) => `${(i*0x1000).toString(16)}-${(i*0x1000+0xFF).toString(16)}:0x${(Math.random()*0xFFFF|0).toString(16)}`);
+    console.log(`@${t} ${regs.join(" ")} | ${cpuFlags} | HEAP:${heap.join(" ")} | STACK:[${callStack.join("->")}] | MEM:${memMap.join(" ")}`);
+  }
+
+  const runtimeData = await fetchRuntime();
+  if (!runtimeData) return;
+  setInterval(fetchDiagnostics, 1000);
+  window.fetchDiagnostics = fetchDiagnostics;
+})();
+
 // ===============================
 // Runtime trackers & helpers
 // ===============================
