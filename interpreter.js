@@ -41,7 +41,7 @@ const BYTE_KEYWORDS = [
   "onStr","func","const","AND","NOT","IF",
   "Change","SIPHON","Share","addNum","dleNum","Do","-c",
   "Button","Check","Spawn.New","raycast","Hit","Keybind","velocity","require",
-  "ST","AT","TA","BT","TS", "math.Add", "math.Sub", "math.Mul", "math.Div"
+  "ST","AT","TA","BT","TS", "math.Add", "math.Sub", "math.Mul", "math.Div", "cringe"
 ].map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); // escape for regex
 
 CodeMirror.defineMode("byte", function(config){
@@ -74,7 +74,7 @@ function highlightCurrentLine(lineNum){
 }
 
 // ===============================
-// Cleanup runtime (buttons & key handlers)
+// fuck off
 // ===============================
 function cleanupRuntime(){
   // remove buttons created by previous runs
@@ -89,18 +89,18 @@ function cleanupRuntime(){
   });
   __byte_runtime.keyHandlers.length = 0;
 
-  // Also remove any orphan DOM buttons with class 'byte-btn' just in case
+  // Also remove any orphan DOM buttons with class 'byte-btn' just in case, yknow, because we  gtta scare away the assholes who try and break the rogramming language
   document.body.querySelectorAll("button.byte-btn").forEach(b=>b.remove());
 }
 
 // ===============================
-// Byte Interpreter Core
+// Byte Interpreter Core (sounds like meta made this shit up lmao)
 // ===============================
 async function runByteAsync(code){
   const output = [];
   const globalVars = {};           // declared with VAR or const at top-level
   const functions = {};            // parsed functions
-  const declaredVarOrder = [];     // for addNum/dleNum fallback
+  const declaredVarOrder = [];     // for addNum/dleNum fallback video games for my life is the maid 
   const buttons = {};
   let stopped = false;
   const wait = ms => new Promise(res => setTimeout(res, ms));
@@ -111,6 +111,12 @@ async function runByteAsync(code){
     document.getElementById("output").textContent = "Error: STR missing at start of script.";
     return;
   }
+
+
+// If this code works, it was written by a miracle.
+// If it doesn't, I don't know who wrote it.
+// probably this auth dude idk lmao
+
 
   // ===============================
   // Pre-parse block checker (detect unmatched/unfinished blocks)
@@ -180,7 +186,7 @@ async function runByteAsync(code){
   }
 
   function isNumericString(s){
-    return /^-?\d+(\.\d+)?$/.test(s);
+    return /^-?\d+(\.\d+)?$/.test(s); // dont ask me what the fuck this does
   }
 
   function lookupVar(name, locals){
@@ -224,11 +230,14 @@ async function runByteAsync(code){
         j++;
       }
       functions[name] = body;
-      i = j; // skip to end
+      i = j; // you skip shit to end
     }
   }
 
-  // Helper: parse concatenation expression inside RRI parentheses
+ // !!!!!!!IF YOU CHANGE TABS TO SPACES, YOU WILL BE KILLED!!!!!!!
+ // !!!!!!!!!!!!!!DOING SO FUCKS THE BUILD PROCESS!!!!!!!!!!!!!!!!
+ // -- a wise man doing windoes 2000 source code shit
+
   function parseConcatExpression(expr, locals){
     const parts = [];
     let cur = "";
@@ -573,6 +582,82 @@ async function runByteAsync(code){
   output.push(result); // show result in output
   return;
 }
+
+// Check if the line is exactly the keyword
+if (line === "cringe") {
+  const audio = new Audio("https://files.catbox.moe/ys7ft9.mp3");
+  audio.play().catch(() => console.warn("Autoplay blocked"));
+
+  const lyrics = [
+    "It’s in the greenery, the light and cells combined",
+    "Sunlight hits the leaves, energy starts to climb",
+    "I don’t know no nothin' 'bout no rest, I'm alive",
+    "Glucose fuels this process quickly, keepin’ it high",
+    "In chloroplasts, the base cycle starts taking form",
+    "Energy flows, as carbon bonds are being born",
+    "From air to leaves, all the electrons are on tour",
+    "Life’s a change, through light, this power, it restores",
+    "Woah-oh-oh",
+    "This is how the process flows",
+    "Woah-oh-oh",
+    "I guess this is how the process flows",
+    "Through the dark to the light, leaves the green, what a sight",
+    "Carbon now takes a turn through the chlorophyll unseen",
+    "See, I believe the cycle starts when light’s inside",
+    "Cell picks it up, the carbon’s fixed, the plant now thrives",
+    "Roots down in soil, as the water fills the zone",
+    "Cells workin’ fast, and the energy’s on a loan",
+    "Sun’s got its role, hits the chlorophyll with its gold",
+    "Fuelin' the growth, for plants and earth, the world unfolds",
+    "Ain't no rest for photosynthesizers on the go",
+    "In the light of it, this is how the process flows",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi",
+    "skibidi" // my balls itch
+  ];
+
+  (async () => {
+    for (let i = 0; i < lyrics.length; i++) {
+      output.push(lyrics[i]);
+      document.getElementById("output").textContent = output.join("\n");
+      await new Promise(r => setTimeout(r, 1000));
+    }
+  })();
+
+  return; // exit this line normally, no error
+}
+
+// If "cringe" is used in an assignment or table
+if (/.*\bcringe\b.*/.test(line) && line !== "cringe") {
+  throw new Error("Error on line ?: why you add thing to it too");
+}
+
+
+
 
 
 
