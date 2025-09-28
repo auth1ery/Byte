@@ -10,7 +10,7 @@ ANY WEBSITES DEPLOYED/CONNECTED TO THIS GITHUB REPO IS A BACKUP SITE. DO NOT USE
 USE THE NEOCITIES VERSION FOR THE LATEST VERSION OF BYTE: https://bytedev.neocities.org/
 
 # DISCLAIMER 2 (lmao)
-THIS PROGRAMMING LANGUAGE AS OF NOW IS BUGGY AND UNSTABLE. IT IS NOT DESIGNED FOR BIG BYTE PROJECTS. THE INTERPRETER ISN'T PERFECT, AND ERRORS MAY APPEAR UNEXPECTEDLY.
+THIS PROGRAMMING LANGUAGE AS OF NOW IS BUGGY AND UNSTABLE. IT IS NOT DESIGNED FOR BIG BYTE PROJECTS. THE INTERPRETER ISN'T PERFECT, AND ERRORS MAY APPEAR UNEXPECTEDLY. BEWARE OF BUGS, CHECK https://bytedev.neocities.org/bugs
 
 # how to use
 this is just the repository for the project, but you can follow these steps here to get byte into your site. (ooh that rhymed)
@@ -30,9 +30,9 @@ fetch('https://bytedev.neocities.org/API/byte.json')
 
 if your browser starts crying about how that pasting code you don't understand could put your security at risk, type the command: 
 `allow pasting`
-then paste the code. don't worry, it won't do anything else other than downloading byte.json (the interpreter in json) on your computer.
+then paste the code. don't worry, it won't do anything else other than downloading byte.json (the interpreter in json) on your computer, which is harmless, just looks freaky in code editors.
 
-2. do whatever you want, put it into a folder, make bolganese spaghetti with it, but in this example we're gonna add it into a folder or somewhere where your site is hosted.
+2. do whatever you want, put it into a folder, make bolganese spaghetti with it, tell people you made this code even though you didnt, but in this example we're gonna add it into a folder or somewhere where your site is hosted.
 
 3. you can read it in JavaScript or Node.js with `fetch` (browser) or `fs.readFile` (Node.js).
 example in Javascript:
@@ -53,6 +53,6 @@ then, you got it!
 
 # links
 
-IDE: https://bytedev.neocities.org/  
+landing page: https://bytedev.neocities.org/  
 documentation: https://bytedev.neocities.org/docs  
-DISCORD SERVER: https://discord.gg/QMDy4d5gCD
+da discord: https://discord.gg/QMDy4d5gCD
