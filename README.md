@@ -6,8 +6,13 @@ byte is a lightweight interpreted programming language for simple scripting, rap
 flexible, and abnormally buggy. 
 
 # DISCLAIMER
-ANY WEBSITES DEPLOYED/CONNECTED TO THIS GITHUB REPO IS A BACKUP SITE. DO NOT USE THESE SITES, BUT ONLY IF NEOCITIES IS DOWN.
+ANY WEBSITES DEPLOYED/CONNECTED TO THIS GITHUB REPO IS A BACKUP SITE. DO NOT USE THESE SITES BUT ONLY IF NEOCITIES IS DOWN OR RATE-LIMITED.
 USE THE NEOCITIES VERSION FOR THE LATEST VERSION OF BYTE: https://bytedev.neocities.org/
+
+here are the backup sites just in case:
+https://auth1ery.github.io/byte/
+https://bytedev-1pd.pages.dev/
+https://byte-wheat.vercel.app/
 
 # DISCLAIMER 2 (lmao)
 THIS PROGRAMMING LANGUAGE AS OF NOW IS BUGGY AND UNSTABLE. IT IS NOT DESIGNED FOR BIG BYTE PROJECTS. THE INTERPRETER ISN'T PERFECT, AND ERRORS MAY APPEAR UNEXPECTEDLY. BEWARE OF BUGS, CHECK https://bytedev.neocities.org/bugs
