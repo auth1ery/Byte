@@ -1,0 +1,75 @@
+STR
+
+// ===============================
+// Variables & Constants
+VAR [x]
+VAR [y]
+const pi = 3.14159
+VAR [counter]
+
+// ===============================
+// Functions
+func greet =
+  RRI("Hello from Byte function!")
+  WIT = 0.5
+  END
+
+func mathTest =
+  math.Add 5 + 10 =
+  math.Sub 20 + 4 =
+  math.Mul 3 + 7 =
+  math.Div 14 + 2 =
+  END
+
+func musicTest =
+  EXTRACT music
+  PLAY telecaster
+  WIT = 2
+  PAUSE
+  WIT = 1
+  RESUME
+  WIT = 2
+  STOP
+  END
+
+func buttonTest =
+  Button + "Click me" EXE [greet]
+  END
+
+func loopTest =
+  -c + 3 =
+    addNum + 1
+    RRI("Counter: " + do counter)
+  -
+  END
+
+func conditionalTest =
+  IF do counter > 1 THN
+    RRI("Counter is greater than 1")
+  END
+
+func siphonShareTest =
+  addNum + 5
+  SIPHON + 1
+  Share [counter]
+  RRI("Siphoned and shared counter: " + do counter_shared)
+  END
+
+func cringeTest =
+  cringe
+  END
+
+// ===============================
+// Top-level code execution
+onStr =
+  // Test function calls
+  EXE [greet]
+  EXE [mathTest]
+  EXE [musicTest]
+  EXE [buttonTest]
+  EXE [loopTest]
+  EXE [conditionalTest]
+  EXE [siphonShareTest]
+  EXE [cringeTest]
+
+RRI("Byte script testing complete!")
