@@ -4,4 +4,6 @@ THIS PROGRAMMING LANGUAGE AS OF NOW IS BUGGY AND UNSTABLE. IT IS NOT DESIGNED FO
 
 Please do not send pull requests or anything else in that matter, if you have encountered an error or a flaw or simply want to contact us, please contact bytedevinquiries@gmail.com instead of submitting a pull request.
 
+Want to become a contributor? Contact me anywhere.
+
 https://bytedev.neocities.org
